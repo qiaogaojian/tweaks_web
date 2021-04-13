@@ -1,0 +1,15 @@
+{
+  "name": "npm-demo",
+  "version": "1.0.0",
+  "description": "beginner guide to using npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "webpack"
+  },
+  "keywords": [
+    "node",
+    "npm"
+  ],
+  "author": "qiaogaojian",
+  "license": "ISC"
+}
