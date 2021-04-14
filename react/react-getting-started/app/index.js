@@ -2,16 +2,12 @@ import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom";
 
-function Hi() {
+function Hi(props) {
   return (
     <div>
-      Hello <strong>React!</strong>
-      <li>Node</li>
-      <li>Npm</li>
-      <li>Webpack</li>
-      <p>1 + 2 = {1 + 2}</p>
+      Hello <strong>{props.name}!</strong>
     </div>
   );
 }
 
-ReactDOM.render(<Hi />, document.querySelector("#root"));
+ReactDOM.render(<Hi name="Qiao" />, document.querySelector("#root"));
