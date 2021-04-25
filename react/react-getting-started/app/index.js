@@ -2,6 +2,7 @@
 import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom";
+import axios from "axios";
 
 function Hi() {
   return <div>Hello World!</div>;
@@ -109,4 +110,25 @@ const Room = () => {
   );
 };
 
-ReactDOM.render(<Room />, document.querySelector("#root"));
+const Reddit = () => {
+  const [posts, setPosts] = React.useState([]);
+  React.useEffect(() => {
+    axios.get(`https://www.reddit.com/r/eos.json`).then((res) => {
+      const newPosts = res.data.data.children.map((obj) => obj.data);
+      setPosts(newPosts);
+    });
+  }, []);
+
+  return (
+    <div>
+      <h1>/r/eos</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+ReactDOM.render(<Reddit />, document.querySelector("#root"));
