@@ -76,10 +76,11 @@ const Gate = ({ isOpen }) => {
 };
 
 const Room = () => {
-  const [isLight, setLight] = React.useState(false);
+  const [isLight, setLight] = React.useState(true);
   const lightStyle = isLight ? "light" : "dark";
   return (
     <div className={`room ${lightStyle}`}>
+      {/* <div className={`room ${isLight ? "light" : "dark"}`}> */}
       the room is list {isLight ? "light" : "dark"}
       <br />
       <button onClick={() => setLight(!isLight)}>switch</button>
