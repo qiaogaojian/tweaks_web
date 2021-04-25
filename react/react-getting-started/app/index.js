@@ -75,4 +75,16 @@ const Gate = ({ isOpen }) => {
   return <h2>Door is {isOpen ? "open" : "closed"}</h2>;
 };
 
-ReactDOM.render(<Gate isOpen={false} />, document.querySelector("#root"));
+const Room = () => {
+  const [isLight, setLight] = React.useState(false);
+
+  return (
+    <div className="room">
+      the room is list {isLight ? "light" : "dark"}
+      <br />
+      <button onClick={() => setLight(!isLight)}>switch</button>
+    </div>
+  );
+};
+
+ReactDOM.render(<Room />, document.querySelector("#root"));
