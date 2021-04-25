@@ -21,7 +21,6 @@ function Hi1({ firstName, lastName }) {
       <strong>
         {firstName} {lastName}!
       </strong>
-
       <ol>
         <li>Coffee</li>
         <li>Tea</li>
@@ -58,7 +57,17 @@ const Hi2 = ({ firstName, lastName }) => {
   );
 };
 
+const MediaCard = ({ title, body, imageUrl }) => {
+  return (
+    <div>
+      <h2>{title}</h2>
+      <p>{body}</p>
+      <img src={imageUrl}></img>
+    </div>
+  );
+};
+
 ReactDOM.render(
-  <Hi1 firstName="Michael" lastName="Qiao" />,
+  <MediaCard title="MediaCard" body="body" imageUrl="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"/>,
   document.querySelector("#root")
 );
