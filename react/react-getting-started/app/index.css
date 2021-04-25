@@ -2,5 +2,8 @@ body {
   background-color: rgb(220, 210, 180);
 }
 .name {
-    color: blueviolet;
+  color: blueviolet;
+}
+#hello {
+  color: goldenrod;
 }
