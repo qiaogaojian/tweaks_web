@@ -68,6 +68,10 @@ const MediaCard = ({ title, body, imageUrl }) => {
 };
 
 ReactDOM.render(
-  <MediaCard title="MediaCard" body="body" imageUrl="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"/>,
+  <MediaCard
+    title="MediaCard"
+    body={<Hi1 firstName="Michael" lastName="Qiao" />}
+    imageUrl="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"
+  />,
   document.querySelector("#root")
 );
