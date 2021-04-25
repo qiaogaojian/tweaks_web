@@ -124,7 +124,13 @@ const Reddit = () => {
       <h1>/r/eos</h1>
       <ul>
         {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
+          <li key={post.id}>
+            <a href={post.url}>{post.title}</a>
+            <br />
+            anthor: {post.author}
+            <br />
+            <br />
+          </li>
         ))}
       </ul>
     </div>
