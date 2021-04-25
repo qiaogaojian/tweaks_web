@@ -17,6 +17,17 @@ const Hi = ({ firstName, lastName }) => {
       <strong class="name">
         {firstName} {lastName}!
       </strong>
+      <ol>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ol>
+      <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul>
+      <br />1 + 2 = {1 + 2}
     </div>
   );
 };
