@@ -67,11 +67,8 @@ const MediaCard = ({ title, body, imageUrl }) => {
   );
 };
 
-ReactDOM.render(
-  <MediaCard
-    title="MediaCard"
-    body={<Hi1 firstName="Michael" lastName="Qiao" />}
-    imageUrl="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"
-  />,
-  document.querySelector("#root")
-);
+const Gate = ({ isOpen }) => {
+  return <h2>Door is {isOpen ? "open" : "closed"}</h2>;
+};
+
+ReactDOM.render(<Gate isOpen={false} />, document.querySelector("#root"));
