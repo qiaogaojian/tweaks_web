@@ -14,7 +14,7 @@ const Hi = ({ firstName, lastName }) => {
   return (
     <div>
       Hello{" "}
-      <strong>
+      <strong class="name">
         {firstName} {lastName}!
       </strong>
     </div>
