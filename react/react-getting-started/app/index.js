@@ -1,3 +1,4 @@
+// practice from https://daveceddia.com/react-getting-started-tutorial/
 import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom";
