@@ -77,13 +77,34 @@ const Gate = ({ isOpen }) => {
 
 const Room = () => {
   const [isLight, setLight] = React.useState(true);
+  const [temperature, setTemperature] = React.useState(22);
   const lightStyle = isLight ? "light" : "dark";
   return (
     <div className={`room ${lightStyle}`}>
       {/* <div className={`room ${isLight ? "light" : "dark"}`}> */}
-      the room is list {isLight ? "light" : "dark"}
+      the room is {isLight ? "light" : "dark"}
       <br />
       <button onClick={() => setLight(!isLight)}>switch</button>
+      <br />
+      <button onClick={() => setLight(true)}>on</button>
+      <button onClick={() => setLight(false)}>off</button>
+      <br />
+      the temperatuer in room is {temperature}
+      <br />
+      <button
+        onClick={() => {
+          setTemperature(temperature + 1);
+        }}
+      >
+        add
+      </button>
+      <button
+        onClick={() => {
+          setTemperature(temperature - 1);
+        }}
+      >
+        sub
+      </button>
     </div>
   );
 };
