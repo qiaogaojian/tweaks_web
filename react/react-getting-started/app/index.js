@@ -12,7 +12,7 @@ import ReactDOM from "react-dom";
 
 const Hi = ({ firstName, lastName }) => {
   return (
-    <div>
+    <div id="hello">
       Hello{" "}
       <strong class="name">
         {firstName} {lastName}!
