@@ -59,7 +59,7 @@ module.exports = {
   },
   devServer: {
     // 在html引入静态资源时的根目录(默认为项目根目录)
-    contentBase: root,
+    contentBase: "./dist",
     // 有时无法访问可能是端口被占用
     port: 8080,
     // 启动webpack-dev-server时的host(设置为0.0.0.0无论是本机ip或127.0.0.1或localhost都会响应请求)
