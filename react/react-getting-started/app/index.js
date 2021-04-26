@@ -1,6 +1,6 @@
 // practice from https://daveceddia.com/react-getting-started-tutorial/
 import "./index.css";
-import Hello from "./app";
+import Hello from "./app.jsx";
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
