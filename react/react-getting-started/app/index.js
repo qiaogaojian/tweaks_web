@@ -1,5 +1,6 @@
 // practice from https://daveceddia.com/react-getting-started-tutorial/
 import "./index.css";
+import Hello from "./app";
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
@@ -137,4 +138,4 @@ const Reddit = () => {
   );
 };
 
-ReactDOM.render(<Reddit />, document.querySelector("#root"));
+ReactDOM.render(<Hello/>, document.querySelector("#root"));
