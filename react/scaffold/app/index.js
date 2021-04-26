@@ -1,9 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import App from "./component/App.jsx";
 
-function Hi() {
-  return <div>Hello React!</div>;
-}
-
-ReactDOM.render(<Hi />, document.querySelector("#root"));
+ReactDOM.render(<App />, document.querySelector("#root"));
