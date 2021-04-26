@@ -139,4 +139,8 @@ const Reddit = () => {
   );
 };
 
-ReactDOM.render(<OneTimeButton onClick={()=>{console.log("Click OneTimeButton");}}/>, document.querySelector("#root"));
+function logTest(){
+    console.log("Click OneTimeButton");
+}
+
+ReactDOM.render(<OneTimeButton onClick={(logTest)}/>, document.querySelector("#root"));
