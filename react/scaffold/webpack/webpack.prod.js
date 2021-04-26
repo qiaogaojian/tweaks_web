@@ -6,8 +6,12 @@ module.exports = {
   mode: "development",
   entry: path.join(root, "./app/index.js"),
   output: {
+    // 打包文件名
     filename: "bundle.js",
+    // 打包输出目录
     path: path.join(root, "./dist"),
+    // 资源引用的公共绝对路径
+    publicPath: path.join(root, "./public"),
   },
   module: {
     rules: [
