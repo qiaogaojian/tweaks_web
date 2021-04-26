@@ -1,6 +1,5 @@
 const path = require("path");
 const root = path.join(__dirname, "..");
-const TerserPlugin = require("terser-webpack-plugin");
 
 // 自动获取可远程访问的ip
 const os = require("os");
@@ -63,6 +62,10 @@ module.exports = {
     host: getNetworkIp(),
     // 开启热更新
     hot: true,
+    // true启动时和每次保存之后，那些显示的 webpack 包(bundle)信息将被隐藏。错误和警告仍然会显示, 和stats不能一起使用。
+    // noInfo: true,
+    // inline模式, 默认true在控制台中显示编译打包重新构建的状态
+    inline: true,
     // 一切服务都启用gzip 压缩(也可以通过webpack-dev-server --compress启动)
     compress: true,
     // true启用https，false不启用
@@ -70,13 +73,4 @@ module.exports = {
   },
   // 开启source-map 用途是为了在开发环境中便于调试错误 因为打包过后的代码和源代码不一样很难阅读 source map一般只在开发环境运行 生产环境还是保持混乱的状态防止逻辑暴露
   devtool: "source-map",
-  // 防止生成 License 文件
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        extractComments: false, //不将注释提取到单独的文件中
-      }),
-    ],
-  },
 };
