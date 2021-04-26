@@ -1,4 +1,5 @@
 const path = require("path");
+const root = path.join(__dirname, "..");
 const TerserPlugin = require("terser-webpack-plugin");
 
 // 自动获取可远程访问的ip
@@ -30,10 +31,10 @@ function getNetworkIp() {
 
 module.exports = {
   mode: "development",
-  entry: "./app/index.js",
+  entry: path.join(root, "./app/index.js"),
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.join(root, "./dist"),
   },
   module: {
     rules: [
