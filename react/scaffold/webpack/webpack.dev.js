@@ -32,8 +32,12 @@ module.exports = {
   mode: "development",
   entry: path.join(root, "./app/index.js"),
   output: {
+    // 打包文件名
     filename: "bundle.js",
+    // 打包输出目录
     path: path.join(root, "./dist"),
+    // 资源引用的公共绝对路径
+    publicPath: path.join(root, "./public"),
   },
   module: {
     rules: [
@@ -55,7 +59,7 @@ module.exports = {
   },
   devServer: {
     // 在html引入静态资源时的根目录(默认为项目根目录)
-    contentBase: "./dist",
+    contentBase: root,
     // 有时无法访问可能是端口被占用
     port: 8080,
     // 启动webpack-dev-server时的host(设置为0.0.0.0无论是本机ip或127.0.0.1或localhost都会响应请求)
