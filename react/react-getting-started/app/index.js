@@ -2,7 +2,7 @@
 import "./index.css";
 import Hello from "./app.jsx";
 import OneTimeButton from "./hook.jsx";
-import useToggle from "./hook";
+import { useLight } from "./hook";
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
@@ -80,18 +80,18 @@ const Gate = ({ isOpen }) => {
 };
 
 const Room = () => {
-  const [isLight, toggleLight] = useToggle(true);
+  const [isLight,label, toggleLight, on, off] = useLight(true);
   const [temperature, setTemperature] = React.useState(22);
   const lightStyle = isLight ? "light" : "dark";
   return (
     <div className={`room ${lightStyle}`}>
       {/* <div className={`room ${isLight ? "light" : "dark"}`}> */}
-      the room is {isLight ? "light" : "dark"}
+      the room is {label}
       <br />
       <button onClick={toggleLight}>switch</button>
       <br />
-      <button onClick={() => setLight(true)}>on</button>
-      <button onClick={() => setLight(false)}>off</button>
+      <button onClick={on}>on</button>
+      <button onClick={off}>off</button>
       <br />
       the temperatuer in room is {temperature}
       <br />
@@ -140,8 +140,8 @@ const Reddit = () => {
   );
 };
 
-function logTest(){
-    console.log("Click OneTimeButton");
+function logTest() {
+  console.log("Click OneTimeButton");
 }
 
-ReactDOM.render(<Room/>, document.querySelector("#root"));
+ReactDOM.render(<Room />, document.querySelector("#root"));
