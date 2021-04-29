@@ -36,8 +36,8 @@ module.exports = {
     filename: "bundle.js",
     // 打包输出目录
     path: path.join(root, "./dist"),
-    // 资源引用的公共绝对路径
-    publicPath: path.join(root, "./public"),
+   // 资源引用的公共绝对路径(dev打包目录)
+    // publicPath: path.join(root, "./public"),
   },
   module: {
     rules: [
