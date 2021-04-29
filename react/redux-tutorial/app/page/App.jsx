@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Nav, Body } from "../component/user-info/user-info.jsx";
+import { UserContext, Nav, Body } from "../component/user-info/user-info.jsx";
 
 export class App extends React.Component {
   constructor(props) {
@@ -21,8 +21,10 @@ export class App extends React.Component {
     const { user } = this.state;
     return (
       <div className="app">
-        <Nav user={user} />
-        <Body user={user} />
+        <UserContext.Provider value={this.state.user}>
+          <Nav />
+          <Body />
+        </UserContext.Provider>
       </div>
     );
   }

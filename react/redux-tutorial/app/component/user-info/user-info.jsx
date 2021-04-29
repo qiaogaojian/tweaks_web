@@ -1,56 +1,66 @@
 import React from "react";
-import "./user-info.css"
+import "./user-info.css";
 
-const UserAvatar = ({ user, size }) => {
+export const UserContext = React.createContext();
+
+const UserAvatar = ({ size }) => {
   return (
-    <img
-      className={`user-avatar ${size || ""}`}
-      alt="user avatar"
-      src={user.avatar}
-    />
+    <UserContext.Consumer>
+      {(user) => (
+        <img
+          className={`user-avatar ${size || ""}`}
+          alt="user avatar"
+          src={user.avatar}
+        />
+      )}
+    </UserContext.Consumer>
   );
 };
 
-const UserStats = ({ user }) => {
+const UserStats = () => {
   return (
-    <div className="user-stats">
-      <div>
-        <UserAvatar user={user} />
-        {user.name}
-      </div>
-      <div className="stats">
-        <div>{user.followers} Followers</div>
-        <div>Following {user.following}</div>
-      </div>
-    </div>
+    <UserContext.Consumer>
+      {(user) => (
+        <div className="user-stats">
+          <div>
+            <UserAvatar user={user} />
+            {user.name}
+          </div>
+          <div className="stats">
+            <div>{user.followers} Followers</div>
+            <div>Following {user.following}</div>
+          </div>
+        </div>
+      )}
+    </UserContext.Consumer>
   );
 };
 
-const SideBar = ({ user }) => {
+const SideBar = () => {
   return (
     <div className="sidebar">
-      <UserStats user={user} />
+      <UserStats />
     </div>
   );
 };
 
-const Content = ({ user }) => {
+const Content = () => {
   return <div className="content"> main content here</div>;
 };
 
-export const Body = ({ user }) => {
+export const Body = () => {
   return (
     <div className="body">
-      <SideBar user={user} />
-      <Content user={user} />
+      <SideBar />
+      <Content />
     </div>
   );
 };
 
-export const Nav = ({ user }) => {
+export const Nav = () => {
   return (
     <div className="nav">
-      <UserAvatar user={user} size="small" />
+      <UserAvatar size="small" />
     </div>
   );
 };
