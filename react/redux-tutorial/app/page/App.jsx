@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { UserContext, Nav, Body } from "../component/user-info/user-info.jsx";
 import { RoomContext, RoomStore, Room } from "../component/room/room.jsx";
+import { Counter } from "../component/counter/counter.jsx";
 
 export class App extends React.Component {
   constructor(props) {
@@ -30,13 +31,21 @@ export class App extends React.Component {
   //     );
   //   }
 
+  //   render() {
+  //     return (
+  //       <RoomStore>
+  //         <div className="app">
+  //           <Room />
+  //         </div>
+  //       </RoomStore>
+  //     );
+  //   }
+
   render() {
     return (
-      <RoomStore>
-        <div className="app">
-          <Room />
-        </div>
-      </RoomStore>
+      <div className="app">
+        <Counter />
+      </div>
     );
   }
 }
