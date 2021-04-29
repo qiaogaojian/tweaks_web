@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { UserContext, Nav, Body } from "../component/user-info/user-info.jsx";
+import { RoomContext, RoomStore, Room } from "../component/room/room.jsx";
 
 export class App extends React.Component {
   constructor(props) {
@@ -17,15 +18,25 @@ export class App extends React.Component {
     };
   }
 
+  //   render() {
+  //     const { user } = this.state;
+  //     return (
+  //       <div className="app">
+  //         <UserContext.Provider value={this.state.user}>
+  //           <Nav />
+  //           <Body />
+  //         </UserContext.Provider>
+  //       </div>
+  //     );
+  //   }
+
   render() {
-    const { user } = this.state;
     return (
-      <div className="app">
-        <UserContext.Provider value={this.state.user}>
-          <Nav />
-          <Body />
-        </UserContext.Provider>
-      </div>
+      <RoomStore>
+        <div className="app">
+          <Room />
+        </div>
+      </RoomStore>
     );
   }
 }
