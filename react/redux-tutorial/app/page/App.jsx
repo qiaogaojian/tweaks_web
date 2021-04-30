@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { UserContext, Nav, Body } from "../component/user-info/user-info.jsx";
 import { RoomContext, RoomStore, Room } from "../component/room/room.jsx";
-import { Counter } from "../component/counter/counter.jsx";
+import Counter from "../component/counter/counter.jsx";
 
 export class App extends React.Component {
   constructor(props) {

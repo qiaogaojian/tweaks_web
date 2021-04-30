@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { App } from "./page/App.jsx";
 import { createStore } from "redux";
+import { Provider } from "react-redux";
 
 const initState = {
   count: 0,
@@ -30,5 +31,9 @@ function reducer(state = initState, action) {
 // store.dispatch({ type: "DECREMENT" });
 // store.dispatch({ type: "RESET" });
 
-
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.querySelector("#root")
+);
