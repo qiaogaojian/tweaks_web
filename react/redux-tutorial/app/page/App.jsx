@@ -3,32 +3,6 @@ import ReactDOM from "react-dom";
 import { UserContext, Nav, Body } from "../component/user-info/user-info.jsx";
 import { RoomContext, RoomStore, Room } from "../component/room/room.jsx";
 import { Counter } from "../component/counter/counter.jsx";
-import { createStore } from "redux";
-
-const initState = {
-  count: 0,
-};
-const store = createStore(reducer);
-
-function reducer(state = initState, action) {
-  switch (action.type) {
-    case "INCREMENT":
-      state = { count: state.count + 1 };
-      break;
-    case "DECREMENT":
-      state = { count: state.count - 1 };
-      break;
-    case "RESET":
-      state = { count: 0 };
-      break;
-  }
-  console.log("reducer", state, action);
-  return state;
-}
-
-store.dispatch({ type: "INCREMENT" });
-store.dispatch({ type: "DECREMENT" });
-store.dispatch({ type: "RESET" });
 
 export class App extends React.Component {
   constructor(props) {
