@@ -15,16 +15,16 @@ class Counter extends React.Component {
 
   increment() {
     // this.setState({ count: this.state.count + 1 });
-    this.props.dispatch({ type: Action.INCREMENT });
+    this.props.dispatch(Action.increment());
   }
 
   decrement() {
     // this.setState({ count: this.state.count - 1 });
-    this.props.dispatch({ type: Action.DECREMENT });
+    this.props.dispatch(Action.decrement());
   }
 
   reset() {
-    this.props.dispatch({ type: Action.RESET });
+    this.props.dispatch(Action.reset());
   }
 
   render() {
