@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./counter.css";
+import * as Action from "../../consts/actions";
 
 class Counter extends React.Component {
   constructor(props) {
@@ -14,16 +15,16 @@ class Counter extends React.Component {
 
   increment() {
     // this.setState({ count: this.state.count + 1 });
-    this.props.dispatch({ type: "INCREMENT" });
+    this.props.dispatch({ type: Action.INCREMENT });
   }
 
   decrement() {
     // this.setState({ count: this.state.count - 1 });
-    this.props.dispatch({ type: "DECREMENT" });
+    this.props.dispatch({ type: Action.DECREMENT });
   }
 
   reset() {
-    this.props.dispatch({ type: "RESET" });
+    this.props.dispatch({ type: Action.RESET });
   }
 
   render() {

@@ -5,6 +5,7 @@ import "./index.css";
 import { App } from "./page/App.jsx";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import * as Action from "./consts/actions"
 
 const initState = {
   count: 0,
@@ -13,13 +14,13 @@ const store = createStore(reducer);
 
 function reducer(state = initState, action) {
   switch (action.type) {
-    case "INCREMENT":
+    case Action.INCREMENT:
       state = { count: state.count + 1 };
       break;
-    case "DECREMENT":
+    case Action.DECREMENT:
       state = { count: state.count - 1 };
       break;
-    case "RESET":
+    case Action.RESET:
       state = { count: 0 };
       break;
   }
