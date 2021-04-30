@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 
 import "./index.css";
 import { App } from "./page/App.jsx";
@@ -10,7 +11,7 @@ import * as Action from "./consts/actions";
 const initState = {
   count: 0,
 };
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 function reducer(state = initState, action) {
   switch (action.type) {
