@@ -9,16 +9,21 @@ class Counter extends React.Component {
     // this.state = { count: 0 };
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
   increment() {
     // this.setState({ count: this.state.count + 1 });
-    this.props.dispatch({type:"INCREMENT"});
-}
+    this.props.dispatch({ type: "INCREMENT" });
+  }
 
-decrement() {
+  decrement() {
     // this.setState({ count: this.state.count - 1 });
-    this.props.dispatch({type:"DECREMENT"});
+    this.props.dispatch({ type: "DECREMENT" });
+  }
+
+  reset() {
+    this.props.dispatch({ type: "RESET" });
   }
 
   render() {
@@ -29,6 +34,9 @@ decrement() {
           <button onClick={this.decrement}>-</button>
           <span className="count">{this.props.count}</span>
           <button onClick={this.increment}>+</button>
+          <button id="btn_reset" onClick={this.reset}>
+            reset
+          </button>
         </div>
       </div>
     );
