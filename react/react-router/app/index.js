@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
+import { BrowserRouter } from "react-router-dom";
 
 import { App } from "./page/app.jsx";
 import * as Action from "./consts/actions";
@@ -28,9 +29,4 @@ function reducer(state = initState, action) {
   return state;
 }
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.querySelector("#root")
-);
+ReactDOM.render(<App />, document.querySelector("#root"));
