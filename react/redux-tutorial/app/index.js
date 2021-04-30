@@ -26,9 +26,9 @@ function reducer(state = initState, action) {
   return state;
 }
 
-store.dispatch({ type: "INCREMENT" });
-store.dispatch({ type: "DECREMENT" });
-store.dispatch({ type: "RESET" });
+// store.dispatch({ type: "INCREMENT" });
+// store.dispatch({ type: "DECREMENT" });
+// store.dispatch({ type: "RESET" });
 
 
 ReactDOM.render(<App />, document.querySelector("#root"));
