@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
 
 import "./index.css";
 import { App } from "./page/App.jsx";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-import * as Action from "./consts/actions"
+import * as Action from "./consts/actions";
 
 const initState = {
   count: 0,
