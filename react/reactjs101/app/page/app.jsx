@@ -7,8 +7,9 @@ import {
   HashRouter,
 } from "react-router-dom";
 
-import Counter from "../component/counter/counter.jsx";
 import Hello from "../component/hello/Hello.jsx";
+import Counter from "../component/counter/Counter.jsx";
+import Timer from "../component/timer/Timer.jsx";
 import "./app.css";
 
 export default class App extends React.Component {
@@ -23,6 +24,7 @@ export default class App extends React.Component {
           <Switch>
             <Route path="/hello" component={Hello} />
             <Route path="/counter" component={Counter} />
+            <Route path="/timer" component={Timer} />
           </Switch>
         </div>
       </HashRouter>
