@@ -1,0 +1,8 @@
+<html>
+  <head> </head>
+  <body>
+    <div id="root" />
+    <!-- 如果bundle.js在控件之前引入，会不显示内容。位置不可引错。原因是因为给控件赋值操作其实是编译在bundle.js里面的，因此必须放置控件之后。 -->
+    <script type="text/javascript" src="bundle.js"></script>
+  </body>
+</html>
