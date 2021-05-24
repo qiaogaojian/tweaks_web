@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import "./counter.css";
-import * as Action from "../../consts/actions";
+import * as Action from "../../redux/CountAction";
 
 class Counter extends React.Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class Counter extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    count: state.count,
+    count: state.countState.count,
   };
 }
 
